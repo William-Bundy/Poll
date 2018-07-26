@@ -1,7 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GWJ-GX-4CZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--VoteForm-->
+        <scene sceneID="8Yq-rh-6JJ">
+            <objects>
+                <viewController title="VoteForm" id="GWJ-GX-4CZ" customClass="VoteView" customModule="Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jsm-Sq-ren">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjT-7g-kG0">
+                                <rect key="frame" x="16" y="60" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Response" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB9-Je-zAm">
+                                <rect key="frame" x="16" y="109" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the carrying capacity of a swallow?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="449-FB-5YA">
+                                <rect key="frame" x="23" y="20" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-lg-cRe">
+                                <rect key="frame" x="163" y="157" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitVote:" destination="GWJ-GX-4CZ" eventType="touchUpInside" id="T4g-zb-qk0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rjT-7g-kG0" firstAttribute="top" secondItem="449-FB-5YA" secondAttribute="bottom" constant="19" id="26r-5c-lEh"/>
+                            <constraint firstItem="449-FB-5YA" firstAttribute="centerX" secondItem="rjT-7g-kG0" secondAttribute="centerX" id="4Xg-vs-8rn"/>
+                            <constraint firstItem="rjT-7g-kG0" firstAttribute="leading" secondItem="Jsm-Sq-ren" secondAttribute="leadingMargin" id="KdD-uP-G6p"/>
+                            <constraint firstItem="rjT-7g-kG0" firstAttribute="leading" secondItem="GB9-Je-zAm" secondAttribute="leading" id="OrE-Tn-d8c"/>
+                            <constraint firstItem="GB9-Je-zAm" firstAttribute="top" secondItem="rjT-7g-kG0" secondAttribute="bottom" constant="19" id="ack-4O-QbA"/>
+                            <constraint firstItem="TOl-lg-cRe" firstAttribute="centerX" secondItem="GB9-Je-zAm" secondAttribute="centerX" id="dIa-NE-hjD"/>
+                            <constraint firstItem="rjT-7g-kG0" firstAttribute="trailing" secondItem="Jsm-Sq-ren" secondAttribute="trailingMargin" id="dsd-X9-LHi"/>
+                            <constraint firstItem="rjT-7g-kG0" firstAttribute="trailing" secondItem="GB9-Je-zAm" secondAttribute="trailing" id="p6i-fg-8qR"/>
+                            <constraint firstItem="TOl-lg-cRe" firstAttribute="top" secondItem="GB9-Je-zAm" secondAttribute="bottom" constant="18" id="sVN-eK-hE9"/>
+                            <constraint firstItem="449-FB-5YA" firstAttribute="top" secondItem="FPb-JM-SCX" secondAttribute="top" id="v7Y-YL-IpE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FPb-JM-SCX"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="rjT-7g-kG0" id="Nac-3r-tWb"/>
+                        <outlet property="responseField" destination="GB9-Je-zAm" id="w9P-YI-4xa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WIM-pi-h6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="42"/>
+        </scene>
+    </scenes>
 </document>

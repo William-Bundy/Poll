@@ -8,6 +8,11 @@
 
 import UIKit
 
+class AppGlobal
+{
+	static var voteController: VoteController = VoteController()
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

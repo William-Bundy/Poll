@@ -8,28 +8,33 @@
 
 import UIKit
 
-class CombinedViewController: UIViewController {
+class VoteHierarchyViewController: UIViewController, VoteModelConsumer {
+	var voteController: VoteController!
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		if let vmc = segue.destination as? VoteModelConsumer {
+			vmc.voteController = voteController
+		}
+	}
+}
+
+class CombinedVoteView: VoteHierarchyViewController,  VoteControllerDelegate {
+
+	var voteForm:VoteView!
+	var resultForm:ResultsView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		print("Combined loaded!")
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	func onVoteAdded(_ vote: Vote) {
+		if resultForm != nil {
+			resultForm.tableView.reloadData()
+		}
+	}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

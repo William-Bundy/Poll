@@ -1,24 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fqq-75-zXH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item-->
+        <scene sceneID="Y7Y-fh-tCj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="47f-ue-gdJ" customClass="CombinedViewController" customModule="Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1Q-iP-Kfz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwC-FP-2tL">
+                                <rect key="frame" x="0.0" y="71" width="375" height="176"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="oFL-Bo-X2I" kind="embed" identifier="VoteSegue" id="srG-oa-5tr"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-IF-blI">
+                                <rect key="frame" x="0.0" y="255" width="375" height="363"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="Q4E-Oh-inp" kind="embed" identifier="ResultsSegue" id="TZP-jn-s8T"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HKJ-qa-P6A"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9eZ-il-PxB"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RO9-JE-o9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="630" y="1254"/>
+        </scene>
+        <!--VoteForm-->
+        <scene sceneID="Eib-6Z-BZj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VoteForm" id="oFL-Bo-X2I" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OU8-14-jHg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="1249"/>
+        </scene>
+        <!--ResultsForm-->
+        <scene sceneID="sfj-k1-iZb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResultsForm" id="Q4E-Oh-inp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBy-oA-kXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427" y="1296"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="zjw-Yc-A39">
+            <objects>
+                <viewController id="HRC-sK-0rH" customClass="VoteHierarchyTabBarController" customModule="Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kz5-Zm-oJJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWL-q3-hxt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="XQM-ur-ENk" kind="embed" identifier="ResultsSegue" id="VfC-4z-oBn"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nD0-WY-6hA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Results" id="5bw-ga-6kq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCU-fW-yQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="814"/>
+        </scene>
+        <!--ResultsForm-->
+        <scene sceneID="Uc5-Q1-xLu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResultsForm" id="XQM-ur-ENk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9D-xu-ccV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="813"/>
+        </scene>
+        <!--Vote-->
+        <scene sceneID="QTP-VL-jMd">
+            <objects>
+                <viewController id="SH2-QF-s5s" customClass="VoteHierarchyTabBarController" customModule="Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5g-e4-NfY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-Q7-LdQ">
+                                <rect key="frame" x="0.0" y="137" width="375" height="323"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="rHH-nj-bpg" kind="embed" identifier="VoteSegue" id="EDe-oW-boJ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hwl-9E-XlZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Vote" id="vk8-ic-6nX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0n-ta-lkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="193.85307346326837"/>
+        </scene>
+        <!--VoteForm-->
+        <scene sceneID="0IU-LG-k1O">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VoteForm" id="rHH-nj-bpg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntA-Lo-yb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="195"/>
+        </scene>
+        <!--Vote Hierarchy Tab Bar Controller-->
+        <scene sceneID="vIl-ga-tbn">
+            <objects>
+                <tabBarController id="fqq-75-zXH" customClass="VoteHierarchyTabBarController" customModule="Poll" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZH1-iW-IgI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="SH2-QF-s5s" kind="relationship" relationship="viewControllers" id="y5H-bb-cjO"/>
+                        <segue destination="HRC-sK-0rH" kind="relationship" relationship="viewControllers" id="iIa-UT-Ka0"/>
+                        <segue destination="47f-ue-gdJ" kind="relationship" relationship="viewControllers" id="a41-Lo-EPs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bm6-RO-AKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-516" y="381"/>
         </scene>
     </scenes>
 </document>
