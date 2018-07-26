@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VoteHierarchyTabBarController: UITabBarController
+class VoteSectionTabBar: UITabBarController
 {
     override func viewDidLoad()
 	{
@@ -17,7 +17,7 @@ class VoteHierarchyTabBarController: UITabBarController
 		print("Tab bar loaded!")
         // Do any additional setup after loading the view.
 		for child in self.childViewControllers {
-			if let child = child as? VoteHierarchyViewController {
+			if let child = child as? VoteModelConsumer {
 				child.voteController = AppGlobal.voteController
 			}
 		}

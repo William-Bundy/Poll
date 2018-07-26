@@ -16,7 +16,7 @@ struct Vote: Equatable, Comparable
 
 	static func <(lhs:Vote, rhs:Vote) -> Bool
 	{
-		return lhs.timestamp < rhs.timestamp
+		return lhs.timestamp > rhs.timestamp
 	}
 }
 

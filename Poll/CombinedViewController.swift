@@ -8,9 +8,12 @@
 
 import UIKit
 
-class VoteHierarchyViewController: UIViewController, VoteModelConsumer {
+class VoteHierarchyView: UIViewController, VoteModelConsumer
+{
 	var voteController: VoteController!
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+	{
 		super.prepare(for: segue, sender: sender)
 		if let vmc = segue.destination as? VoteModelConsumer {
 			vmc.voteController = voteController
@@ -18,17 +21,27 @@ class VoteHierarchyViewController: UIViewController, VoteModelConsumer {
 	}
 }
 
-class CombinedVoteView: VoteHierarchyViewController,  VoteControllerDelegate {
-
-	var voteForm:VoteView!
+class CombinedVoteView: VoteHierarchyView,  VoteControllerDelegate
+{
 	var resultForm:ResultsView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		print("Combined loaded!")
-        // Do any additional setup after loading the view.
+		print("Combined")
+		print(voteController)
+		if voteController != nil {
+			voteController.delegate = self
+		}
     }
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+	{
+		super.prepare(for: segue, sender: sender)
+		if let res = segue.destination as? ResultsView {
+			resultForm = res
+		}
+	}
+		
 
 	func onVoteAdded(_ vote: Vote) {
 		if resultForm != nil {

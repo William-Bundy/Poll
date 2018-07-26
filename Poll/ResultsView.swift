@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ResultsView: VoteHierarchyViewController, UITableViewDataSource, UITableViewDelegate
+class ResultsView: VoteHierarchyView, UITableViewDataSource, UITableViewDelegate
 {
+	var dater = DateFormatter()
 	@IBOutlet weak var tableView: UITableView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print("Results loaded!")
+		// not sure if these are set by default
+		dater.timeZone = TimeZone.current
+		dater.locale = NSLocale.current
+
+		dater.dateFormat = "HH:mm"
+
 		if let table = tableView {
 			table.dataSource = self
 			table.delegate = self
@@ -36,6 +42,7 @@ class ResultsView: VoteHierarchyViewController, UITableViewDataSource, UITableVi
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
 		let v = voteController.votes[indexPath.row]
 		cell.textLabel!.text = "\(v.name): \(v.response)"
+		cell.detailTextLabel!.text = "\(dater.string(from:v.timestamp))"
 		return cell
 	}
 

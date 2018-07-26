@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE4B0726210A63CC0010281B /* CombinedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B0725210A63CC0010281B /* CombinedViewController.swift */; };
-		BE4B0728210A6C620010281B /* VoteHierarchyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B0727210A6C620010281B /* VoteHierarchyTabBarController.swift */; };
+		BE4B072A210A738F0010281B /* VoteSelectionTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B0729210A738F0010281B /* VoteSelectionTabBar.swift */; };
+		BE4B072C210A77C70010281B /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B072B210A77C70010281B /* ResultsCell.swift */; };
 		BE86E108210A2ED6001190F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE86E107210A2ED6001190F8 /* AppDelegate.swift */; };
 		BE86E10D210A2ED6001190F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE86E10B210A2ED6001190F8 /* Main.storyboard */; };
 		BE86E10F210A2ED7001190F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE86E10E210A2ED7001190F8 /* Assets.xcassets */; };
@@ -22,7 +23,8 @@
 
 /* Begin PBXFileReference section */
 		BE4B0725210A63CC0010281B /* CombinedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedViewController.swift; sourceTree = "<group>"; };
-		BE4B0727210A6C620010281B /* VoteHierarchyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteHierarchyTabBarController.swift; sourceTree = "<group>"; };
+		BE4B0729210A738F0010281B /* VoteSelectionTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteSelectionTabBar.swift; sourceTree = "<group>"; };
+		BE4B072B210A77C70010281B /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		BE86E104210A2ED6001190F8 /* Poll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE86E107210A2ED6001190F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE86E10C210A2ED6001190F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,13 +73,14 @@
 				BE4B0725210A63CC0010281B /* CombinedViewController.swift */,
 				BE86E127210A5DAE001190F8 /* ResultsView.swift */,
 				BE86E129210A5DD6001190F8 /* VoteView.swift */,
-				BE4B0727210A6C620010281B /* VoteHierarchyTabBarController.swift */,
+				BE4B0729210A738F0010281B /* VoteSelectionTabBar.swift */,
+				BE4B072B210A77C70010281B /* ResultsCell.swift */,
 				BE86E10B210A2ED6001190F8 /* Main.storyboard */,
-				BE86E10E210A2ED7001190F8 /* Assets.xcassets */,
-				BE86E110210A2ED7001190F8 /* LaunchScreen.storyboard */,
-				BE86E113210A2ED7001190F8 /* Info.plist */,
 				BE86E11F210A3321001190F8 /* VoteForm.storyboard */,
 				BE86E121210A3333001190F8 /* ResultsForm.storyboard */,
+				BE86E110210A2ED7001190F8 /* LaunchScreen.storyboard */,
+				BE86E10E210A2ED7001190F8 /* Assets.xcassets */,
+				BE86E113210A2ED7001190F8 /* Info.plist */,
 			);
 			path = Poll;
 			sourceTree = "<group>";
@@ -158,9 +161,10 @@
 				BE86E108210A2ED6001190F8 /* AppDelegate.swift in Sources */,
 				BE86E128210A5DAE001190F8 /* ResultsView.swift in Sources */,
 				BE4B0726210A63CC0010281B /* CombinedViewController.swift in Sources */,
+				BE4B072C210A77C70010281B /* ResultsCell.swift in Sources */,
 				BE86E12A210A5DD6001190F8 /* VoteView.swift in Sources */,
+				BE4B072A210A738F0010281B /* VoteSelectionTabBar.swift in Sources */,
 				BE86E11C210A2FFD001190F8 /* VoteModel.swift in Sources */,
-				BE4B0728210A6C620010281B /* VoteHierarchyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

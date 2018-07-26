@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VoteView: VoteHierarchyViewController
+class VoteView: VoteHierarchyView
 {
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,5 +23,7 @@ class VoteView: VoteHierarchyViewController
 			let name = nameField.text, name != ""
 		else {return}
 		let _ = voteController.create(name, result)
+		responseField.text = nil
+		nameField.text = nil
 	}
 }
