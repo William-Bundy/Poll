@@ -10,7 +10,17 @@ import UIKit
 
 class ResultsCell: UITableViewCell
 {
-	var vote:Vote!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var timeLabel: UILabel!
+	@IBOutlet weak var responseLabel: UILabel!
 
-	
+	var voteTime:String = ""
+	var vote:Vote! {
+		didSet {
+			nameLabel?.text = vote.name
+			responseLabel?.text = vote.response
+			timeLabel?.text = voteTime
+		}
+	}
+
 }

@@ -39,10 +39,12 @@ class ResultsView: VoteHierarchyView, UITableViewDataSource, UITableViewDelegate
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
+		let defaultCell = tableView.dequeueReusableCell(withIdentifier: "ResultsCell", for: indexPath)
+		guard let cell = defaultCell as? ResultsCell else {return defaultCell}
+
 		let v = voteController.votes[indexPath.row]
-		cell.textLabel!.text = "\(v.name): \(v.response)"
-		cell.detailTextLabel!.text = "\(dater.string(from:v.timestamp))"
+		cell.voteTime = "\(dater.string(from:v.timestamp))"
+		cell.vote = v
 		return cell
 	}
 
